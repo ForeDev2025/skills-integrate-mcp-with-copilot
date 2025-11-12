@@ -1,4 +1,5 @@
 {
+  "_security_warning": "IMPORTANT: Passwords are stored in plain text for demonstration purposes only. This file is intended for development/testing environments. In production, passwords should be properly hashed and stored securely. See ADMIN_CREDENTIALS.md for more information.",
   "teachers": {
     "admin": {
       "password": "school2024",
