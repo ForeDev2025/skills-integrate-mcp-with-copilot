@@ -36,10 +36,10 @@
     </div>
 
     <!-- User Info Modal -->
-    <div id="user-info-modal" class="modal hidden">
+    <div id="user-info-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="user-info-modal-title">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h3>Welcome, <span id="teacher-name"></span></h3>
+        <h3 id="user-info-modal-title">Welcome, <span id="teacher-name"></span></h3>
         <p>You are logged in as: <strong id="teacher-username"></strong></p>
         <button id="logout-btn">Logout</button>
       </div>
