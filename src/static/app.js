@@ -77,6 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
     authNotice.classList.remove("hidden");
   }
 
+  function handleAuthExpiration() {
+    authToken = null;
+    currentUser = null;
+    localStorage.removeItem("authToken");
+    updateUIForLoggedOut();
+  }
+
   // User icon click handler
   userIcon.addEventListener("click", () => {
     if (currentUser) {
@@ -267,10 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         if (response.status === 401) {
           messageDiv.textContent = "Please login to unregister students.";
-          authToken = null;
-          currentUser = null;
-          localStorage.removeItem("authToken");
-          updateUIForLoggedOut();
+          handleAuthExpiration();
         } else {
           messageDiv.textContent = result.detail || "An error occurred";
         }
@@ -333,10 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         if (response.status === 401) {
           messageDiv.textContent = "Please login to register students.";
-          authToken = null;
-          currentUser = null;
-          localStorage.removeItem("authToken");
-          updateUIForLoggedOut();
+          handleAuthExpiration();
         } else {
           messageDiv.textContent = result.detail || "An error occurred";
         }
